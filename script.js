@@ -24,6 +24,12 @@ const init = function () {
   player1.classList.remove("active");
 };
 
+const switchPlayer = function () {
+  activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
+  player0.classList.toggle("active");
+  player1.classList.toggle("active");
+};
+
 init();
 
 rollBtn.addEventListener("click", () => {
@@ -40,14 +46,12 @@ rollBtn.addEventListener("click", () => {
     activePlayer === 0
       ? (currentScore0.textContent = currentScore)
       : (currentScore1.textContent = currentScore);
-    activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
-    player0.classList.toggle("active");
-    player1.classList.toggle("active");
+    switchPlayer();
   }
 });
 
 holdBtn.addEventListener("click", () => {
-  console.log("hold");
+  switchPlayer();
 });
 
 newBtn.addEventListener("click", () => {
