@@ -10,4 +10,133 @@ body {
   display: flex;
   height: 100vh;
   overflow: hidden;
+  background: linear-gradient(
+    to top left,
+    rgb(248, 105, 105),
+    rgb(122, 0, 106)
+  );
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.game {
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  min-width: 800px;
+  width: 50%;
+  height: 500px;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 5px 10px 30px 10px rgba(0, 0, 0, 0.2);
+}
+
+.player {
+  background-color: rgba(255, 255, 255, 0.4);
+  flex: 50%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.player h1 {
+  margin-top: 20%;
+  font-weight: 400;
+}
+
+.player p {
+  font-size: 60px;
+  margin: 5% auto 30%;
+  color: rgb(235, 43, 116);
+}
+
+.player.active {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.player.active h1 {
+  font-weight: 600;
+}
+
+.player0 {
+  border-radius: 10px 0 0 10px;
+}
+
+.player1 {
+  border-radius: 0 10px 10px 0;
+}
+
+.current {
+  background-color: rgba(235, 43, 116, 0.8);
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+}
+
+.active .current {
+  background-color: rgb(235, 43, 116);
+}
+
+.current h3 {
+  margin: 0 auto 10px;
+  font-weight: 400;
+}
+
+.current p {
+  font-size: 40px;
+  margin: 0;
+  color: white;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  width: 100px;
+  transform: translateX(-50%);
+}
+
+.hidden {
+  display: none;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  width: 20%;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 5px 10px 30px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: translateX(-50%) translate3d(0, 5px, 100px) scale(0.95);
+}
+
+.btn.new {
+  top: 10%;
+}
+
+.btn.roll {
+  top: 70%;
+}
+
+.btn.hold {
+  top: 80%;
 }
